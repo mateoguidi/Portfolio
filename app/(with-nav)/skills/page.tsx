@@ -2,7 +2,7 @@
 import {Tooltip} from 'react-tooltip';
 import Link from "next/link"
 import Image from "next/image"
-import {unstable_ViewTransition as ViewTransition} from "react"
+import {ViewTransition} from "react"
 import useKonami from 'use-konami';
 import {skills, Category, CategoryToString, CategoryToIcon} from '@/app/data'
 
@@ -12,7 +12,7 @@ export default function PostList() {
   });
   return (
     <>
-      <ViewTransition name="posts" className="via-blur" exit="duration-100">
+      <ViewTransition name="posts" exit="duration-100">
         <div className="px-4 sm:px-6 md:px-0 py-6">
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <div className="text-lg font-medium col-span-full">Skills</div>

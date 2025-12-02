@@ -1,5 +1,5 @@
 "use client"
-import { unstable_ViewTransition as ViewTransition } from "react"
+import { ViewTransition } from "react"
 import { Header } from "@/app/ui/header"
 import Link from "next/link"
 import Image from "next/image"
@@ -20,7 +20,7 @@ export default function Home() {
       <div className="px-4 sm:px-6 md:px-0 grid gap-12 py-12">
         <Header isCollapsed={false} />
 
-        <ViewTransition name="posts" className="via-blur" exit="duration-100">
+        <ViewTransition name="posts" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/skills"
@@ -90,7 +90,7 @@ export default function Home() {
           </div>
         </ViewTransition>
 
-        <ViewTransition name="posts" className="via-blur" exit="duration-100">
+        <ViewTransition name="posts" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/projects"
@@ -104,7 +104,6 @@ export default function Home() {
                 <ViewTransition
                   key={id}
                   name={`post-${id}`}
-                  className="via-blur"
                 >
                   <Link
                     href={`/projects/${project.name}`}

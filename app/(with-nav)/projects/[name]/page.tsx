@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import { ViewTransition } from "react";
 import { projects, ProjectToSkills } from "@/app/data";
 import { FiExternalLink, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
@@ -63,7 +63,6 @@ export default async function PostDetail(props: any) {
 
               <ViewTransition
                 name={`post-${0}`}
-                className="via-blur"
                 exit="duration-100"
               >
                 <div className="relative w-full h-44 sm:h-56 md:h-[400px]">
