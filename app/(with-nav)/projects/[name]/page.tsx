@@ -92,9 +92,9 @@ export default async function PostDetail(props: any) {
                       >
                         {person.name}
                       </a>
-                      {idx === project.collab.length - 2
+                      {idx === (project.collab?.length ?? 0) - 2
                         ? " et "
-                        : idx < project.collab.length - 1
+                        : idx < (project.collab?.length ?? 0) - 1
                         ? ", "
                         : ""}
                     </span>
