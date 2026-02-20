@@ -75,7 +75,7 @@ export default async function PostDetail({
             {project.collab && project.collab.length > 0 ? (
               <>
                 <br/>
-                I made this project in collaboration with {project.collab.map((person, idx) => (
+                I made this project in collaboration with {project.collab.map((person, idx, collab) => (
                 <span key={person.name}>
                     <a
                       href={person.url}
@@ -85,7 +85,7 @@ export default async function PostDetail({
                     >
                       {person.name}
                     </a>
-                  {idx === project.collab.length - 2 ? ' et ' : idx < project.collab.length - 1 ? ', ' : ''}
+                  {idx === collab.length - 2 ? ' et ' : idx < collab.length - 1 ? ', ' : ''}
                   </span>
               ))}.
               </>
