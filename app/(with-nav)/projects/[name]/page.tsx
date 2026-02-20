@@ -14,7 +14,7 @@ export default async function PostDetail({
                                          }: {
   params: Promise<{ name: string }>
 }) {
-  const projectIndex = projects.findIndex(async (p) => p.name === await params.then((otherP) => otherP.name))
+  const projectIndex = projects.findIndex((p) => p.name === params.name)
   const project = projects[projectIndex]
 
   if (!project) {
