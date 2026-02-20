@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export default async function PostDetail({
                                            params,
                                          }: {
-  params: { name: string }
+  params: Promise<{ name: string }>
 }) {
   const projectIndex = projects.findIndex((p) => p.name === params.name)
   const project = projects[projectIndex]
