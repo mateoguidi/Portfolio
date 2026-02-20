@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import Starfield from "@/app/ui/starfield";
 import favicon from "@/app/favicon.ico"
@@ -29,19 +30,6 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-P48WN69R');`}
         </script>
-        <script id="sw-register" strategy="afterInteractive">
-          {`
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                  console.log('ServiceWorker registration failed: ', err);
-                });
-              });
-            }
-          `}
-        </script>
         <title></title>
         <link rel="icon" href={favicon.src} sizes="any" />
         <meta property="og:title" content="Mateo GUIDI's Portfolio" />
@@ -66,6 +54,19 @@ export default function RootLayout({
             starColor={[255, 255, 255]}
             speedFactor={0.01}
         />
+        <Script id="sw-register" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                  console.log('ServiceWorker registration failed: ', err);
+                });
+              });
+            }
+          `}
+        </Script>
         {children}
       </body>
     </html>

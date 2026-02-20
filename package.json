@@ -19,9 +19,6 @@
     "react-icons": "^5.5.0",
     "react-konami-code": "^2.3.0",
     "react-tooltip": "^5.30.0",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles-preset-fireworks": "^2.12.0",
-    "tsparticles-preset-snow": "^2.12.0",
     "use-konami": "^1.0.1"
   },
   "devDependencies": {
