@@ -1,4 +1,5 @@
 "use client"
+import { unstable_ViewTransition as ViewTransition } from "react"
 import { Header } from "@/app/ui/header"
 import Link from "next/link"
 import Image from "next/image"
@@ -11,11 +12,15 @@ export default function Home() {
     onUnlock: () => window.location.href = "https://lemh.fr",
   });
   return (
-    <div>
+    <ViewTransition
+      name="home"
+      enter="page-enter"
+      exit="page-exit duration-100"
+    >
       <div className="px-4 sm:px-6 md:px-0 grid gap-12 py-12">
         <Header isCollapsed={false} />
 
-        <div>
+        <ViewTransition name="posts" className="via-blur" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/skills"
@@ -83,9 +88,9 @@ export default function Home() {
             style={{borderRadius: "0.5rem", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"}}
           />
           </div>
-        </div>
+        </ViewTransition>
 
-        <div>
+        <ViewTransition name="posts" className="via-blur" exit="duration-100">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             <Link
               href="/projects"
@@ -96,7 +101,11 @@ export default function Home() {
             {Array.from(projects.slice(0, 3)).map((project, index) => {
               const id = index + 1
               return (
-                <div key={id}>
+                <ViewTransition
+                  key={id}
+                  name={`post-${id}`}
+                  className="via-blur"
+                >
                   <Link
                     href={`/projects/${project.name}`}
                     className="aspect-video rounded-lg block overflow-hidden"
@@ -110,15 +119,15 @@ export default function Home() {
                       {project.name}
                     </div>
                     </div></Link>
-                </div>
+                </ViewTransition>
               )
             })}
           </div>
-        </div>
+        </ViewTransition>
       </div>
       <footer className={"justify-self-center text-sm mb-5"}>
           © {new Date().getFullYear()} Matéo GUIDI • All rights reserved
       </footer>
-    </div>
+    </ViewTransition>
   )
 }

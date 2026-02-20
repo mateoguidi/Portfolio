@@ -1,12 +1,12 @@
 import Project_MinecraftDle_Image from '@/app/ui/assets/img/projects/minecraftdle.png';
-import Project_DeckBuildDuel_Image from '@/app/ui/assets/img/projects/deckbuildduel.png'
+import Project_Rumore_Image from '@/app/ui/assets/img/projects/rumore.png'
 import Project_GDMC_Image from '@/app/ui/assets/img/projects/gdmc.jpg'
 import Project_LabyGame_Image from '@/app/ui/assets/img/projects/labygame.png'
 import Project_LEMH_Image from '@/app/ui/assets/img/projects/lemh.png'
 import Project_PixeLEMH_Image from '@/app/ui/assets/img/projects/pixelemh.png'
 import Project_Serpentini_Image from '@/app/ui/assets/img/projects/serpentini.png'
 import Project_SimplerMC_Image from '@/app/ui/assets/img/projects/simplermc.png'
-import Project_Stratello_Image from '@/app/ui/assets/img/projects/stratello.png'
+import Project_Sudoku_Image from '@/app/ui/assets/img/projects/sudoku.png'
 
 import Skill_Unity_Image from '@/app/ui/assets/img/skills/Unity.png';
 import Skill_Csharp_Image from '@/app/ui/assets/img/skills/Csharp.png';
@@ -133,13 +133,13 @@ export function ProjectToSkills(project: Project): Skill[] {
 
 export const projects: Project[] = [
     {
-        name: 'Stratello',
-        img: Project_Stratello_Image,
-        description: 'A LAN-hosted card game where the main goal is to accumulate the most gold by the end to win. Players competing for resources and making key decisions round after round. (WIP)',
-        technos: ['Unity', 'C#', 'Git'],
+        name: 'Sudoku',
+        img: Project_Sudoku_Image,
+        description: 'A modern, interactive Sudoku game built with React, TypeScript, and Vite. Featuring multiple grid sizes (2x2, 2x3, 3x3), three difficulty levels, time tracking with saved personal bests, keyboard and touch support, a fully responsive design, a sleek modern UI, and a win screen displaying your performance.',
+        technos: ['React', 'Git'],
         demo: true,
-        url: 'https://mateoguidi.itch.io/',
-        category: Category.VIDEOGAME,
+        url: 'https://sudoku.mateoguidi.fr',
+        category: Category.WEB,
         university: false,
         year: 2026
     },
@@ -216,15 +216,15 @@ export const projects: Project[] = [
         }, {name: "Hugo Retail", url: "https://www.linkedin.com/in/hugo-retail"}]
     },
     {
-        name: 'DeckBuildDuel',
-        img: Project_DeckBuildDuel_Image,
-        description: 'A card game based on constructing decks and dueling opponents, emphasizing strategic choices, adaptability, and risk management through each match. Unique card abilities and randomized events ensure no two duels are ever quite the same.',
-        technos: ['C#', 'Visual Studio', 'Git'],
+        name: 'Rumore',
+        img: Project_Rumore_Image,
+        description: 'A C++ OpenGL project that procedurally generates and renders a wireframe terrain mesh using Perlin Noise. It opens an interactive OpenGL window where users can adjust parameters such as frequency, amplitude, and scale through real-time UI sliders, triggering immediate mesh regeneration and dynamic visual updates without restarting the application.',
+        technos: ['C++', 'VS Code', 'Git'],
         demo: false,
-        url: '',
-        category: Category.VIDEOGAME,
-        university: true,
-        year: 2024
+        url: 'https://github.com/mateoguidi/Rumore',
+        category: Category.BACKEND,
+        university: false,
+        year: 2026
     },
     {
         name: 'LabyGame',
