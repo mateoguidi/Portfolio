@@ -1,4 +1,5 @@
 "use client"
+import {unstable_ViewTransition as ViewTransition} from "react"
 import useKonami from 'use-konami';
 import {FiExternalLink} from 'react-icons/fi';
 import { FaGithub } from "react-icons/fa";
@@ -12,7 +13,7 @@ export default function PostList() {
   });
   return (
     <>
-        <div>
+        <ViewTransition name="posts" className="via-blur gap-0" exit="duration-100">
           <div className="px-4 sm:px-6 md:px-0 py-6">
             <div className="space-y-4 text-gray-100 text-base md:text-lg leading-relaxed">
               <h2 className="text-base font-semibold text-gray-300 tracking-wide">About</h2>
@@ -61,7 +62,7 @@ export default function PostList() {
             </div>
             <div className="flex flex-col items-start md:items-end space-y-4 mt-1 md:w-1/3">
               <a
-                href="https://cv.mateoguidi.fr"
+                href="https://mateoguidi.fr/cv"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 font-semibold rounded w-full md:w-max transition transform text-sm hover:scale-105 duration-75 bg-blue-600 text-white hover:bg-blue-700 justify-center"
@@ -97,7 +98,7 @@ export default function PostList() {
             </div>
           </section>
         </div>
-      </div>
+      </ViewTransition>
     </>
   )
 }

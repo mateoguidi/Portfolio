@@ -1,4 +1,5 @@
 "use client"
+import { unstable_ViewTransition as ViewTransition, useState } from "react"
 import { clsx as cx } from "clsx"
 import Image from "next/image"
 import Link from "next/link"
@@ -16,6 +17,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
         "mt-24": !isCollapsed,
       })}
     >
+      <ViewTransition name="header-image" className="via-blur">
         <Link href="/" className="mx-auto md:mx-0">
           <Image
             className={cx("rounded-full object-cover transition-all", {
@@ -28,8 +30,10 @@ export function Header({ isCollapsed = false }: HeaderProps) {
             height={130}
           />
         </Link>
+      </ViewTransition>
 
       <div className="grid gap-2 items-center text-center md:text-left">
+        <ViewTransition name="header-title" className="via-blur">
           <Link
             href="/"
             className={cx(
@@ -42,6 +46,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
           >
             Mateo GUIDI
           </Link>
+        </ViewTransition>
 
         {!isCollapsed ? (
           <div className="text-sm md:text-lg">
@@ -49,6 +54,10 @@ export function Header({ isCollapsed = false }: HeaderProps) {
           </div>
         ) : null}
 
+        <ViewTransition
+          name="header-nav"
+          share="via-blur"
+        >
           <div
             className={cx("w-full md:w-fit flex gap-2 items-center justify-center md:justify-start flex-wrap transition-all", {
               "md:col-start-2 md:justify-self-end": isCollapsed,
@@ -59,6 +68,7 @@ export function Header({ isCollapsed = false }: HeaderProps) {
             <NavLink href="/skills">Skills</NavLink>
             <NavLink href="/projects">Projects</NavLink>
           </div>
+        </ViewTransition>
       </div>
     </div>
   )
