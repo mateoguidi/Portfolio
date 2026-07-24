@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs"
+import { existsSync, mkdirSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { resolve, dirname } from "node:path"
 import sharp from "sharp"
@@ -30,6 +30,8 @@ const projectThumbnails: { slug: string; source: string }[] = [
 const THUMBNAIL_WIDTH = 800
 
 async function run() {
+  mkdirSync(thumbOutDir, { recursive: true })
+
   for (const { source, sizes } of variants) {
     const sourcePath = resolve(imgDir, source)
     if (!existsSync(sourcePath)) {

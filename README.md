@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Then go to [localhost:3000](http://localhost:5173)
+Then go to [localhost:5173](http://localhost:5173)
 
 ## Author
 
@@ -23,4 +23,4 @@ Then go to [localhost:3000](http://localhost:5173)
 
 ## License
 
-This project is open source and available under the mIT License
+This project is open source and available under the MIT License
