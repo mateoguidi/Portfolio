@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" href="/img/pp-64.webp" />
+    <link rel="icon" type="image/jpeg" href="/img/pp.jpg" />
+    <link rel="apple-touch-icon" href="/img/pp-160.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <title>Mateo GUIDI - Portfolio</title>
+    <meta
+      name="description"
+      content="Junior Unity developer portfolio - C#, Java, and web projects by Mateo GUIDI."
+    />
+    <link rel="canonical" href="https://mateoguidi.fr/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mateo GUIDI - Portfolio" />
+    <meta property="og:title" content="Mateo GUIDI - Portfolio" />
+    <meta
+      property="og:description"
+      content="Junior Unity developer portfolio - C#, Java, and web projects by Mateo GUIDI."
+    />
+    <meta property="og:url" content="https://mateoguidi.fr/" />
+    <meta property="og:image" content="https://mateoguidi.fr/img/pp.jpg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mateo GUIDI - Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Junior Unity developer portfolio - C#, Java, and web projects by Mateo GUIDI."
+    />
+    <meta name="twitter:image" content="https://mateoguidi.fr/img/pp.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mateo GUIDI",
+        "url": "https://mateoguidi.fr/",
+        "image": "https://mateoguidi.fr/img/pp.jpg",
+        "jobTitle": "Junior Unity Developer",
+        "description": "Junior Unity developer - C#, Java, and web projects.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://github.com/MateoGuidi",
+          "https://www.linkedin.com/in/mateoguidi"
+        ]
+      }
+    </script>
+
+    <script>
+      try {
+        var stored = localStorage.getItem("theme")
+        var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches
+        document.documentElement.classList.toggle("dark", dark)
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
